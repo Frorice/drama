@@ -1,0 +1,23 @@
+extends ../../layout
+
+block content
+  .myspace
+    .set-mydata
+      a(href='./userData.jade') 修改个人资料
+    .mydata
+      .avt
+        img(src='#{personal.avt}')
+      .personaldata
+        mixin line(item1,item2,value1,value2)
+          tr
+            td
+              label=item1+'：'+value1
+            td
+              label=item2+'：'+value2
+        table
+          +line('昵称','年龄',personal.data.name,personal.data.age)
+          +line('注册时间','联系方式',personal.data.registTime,personal.data.touch)
+    .myfavorite
+      ul
+        each item in personal.favorite
+          li #{item}
