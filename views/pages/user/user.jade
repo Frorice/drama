@@ -3,10 +3,17 @@ extends ../../layout
 block content
   .myspace
     .set-mydata
+<<<<<<< HEAD
       a(href="./#{personal.id}/data") 修改个人资料
     .mydata
       .avt
         img(src="#{personal.avt}")
+=======
+      a(href='./userData.jade') 修改个人资料
+    .mydata
+      .avt
+        img(src='#{personal.avt}')
+>>>>>>> 915fa6dcceec7f251501f0ece0a2ba317d483fa7
       .personaldata
         mixin line(item1,item2,value1,value2)
           tr
