@@ -1,14 +1,9 @@
 var express = require('express');
-<<<<<<< HEAD
 var bodyParser = require('body-parser');
 var user = require('./routes/user');
 var drama = require('./routes/drama');
 var cat = require('./routes/cat');
 
-=======
-var user = require('./routes/user');
-var bodyParser = require('body-parser');
->>>>>>> 915fa6dcceec7f251501f0ece0a2ba317d483fa7
 var app = express();
 
 //设置模板引擎
@@ -19,7 +14,6 @@ app.set('view engine','jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-<<<<<<< HEAD
 //加载路由中间件（路径相对于根目录）
 app.use('/user',user);
 app.use('/drama',drama);
@@ -62,14 +56,6 @@ app.get('/',function(req,res){
         }
       }
     }
-=======
-//加载路由中间件
-app.use('/user',user);
-
-app.get('/',function(req,res){
-	res.render('index',{
-    title:'DRAMA 首页'
->>>>>>> 915fa6dcceec7f251501f0ece0a2ba317d483fa7
   });
 });
 
