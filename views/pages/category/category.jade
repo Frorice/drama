@@ -1,0 +1,12 @@
+extends ../../layout
+
+block content
+  #category
+    .panel-body
+            if cat.dramas
+              each drama in cat.dramas
+                .thumbnail
+                  a(href="/drama/#{drama.id}")
+                    img(src="#{drama.poster}", alt="#{drama.name}")
+                  .caption
+                    h4 #{drama.name}

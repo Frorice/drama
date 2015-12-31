@@ -1,0 +1,18 @@
+extends ../../layout
+
+block content
+  #detail
+    #detail-left
+      img(href="#{drama.poster}",alt="#{drama.name}") 
+      #episodes
+        each episode in drama.episodes
+          #episode
+            a(href="./#{drama.id}/#{episode.id}") #{episode.id}
+    #detail-right
+      ul
+        li 
+          label 名称:#{drama.name}
+        li
+          label 年代:#{drama.time}
+        li
+          label 简介:#{drama.summary}
