@@ -5,9 +5,10 @@ var user  = express.Router();
 user.get('/:id',function(req,res){
   //模板根目录为 views
 	res.render('./user/user',{
+    title:'个人中心',
     personal:{
       avt:'',
-      id:req.params.id,
+      _id:req.params.id,
       data:{
         name:'fanfan',
         age:18,
@@ -25,7 +26,9 @@ user.get('/:id',function(req,res){
 });
 
 user.get('/:id/data',function(req,res){
-  res.render('./user/userData');
+  res.render('./user/userData',{
+    title:'资料修改'
+  });
 });
 
 module.exports = user;

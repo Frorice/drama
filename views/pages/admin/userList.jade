@@ -1,0 +1,18 @@
+extends ../../layout
+
+block content
+  .list
+      table
+        thead
+          tr
+            th 名称
+            th 权限
+            //-th 注册时间
+            th 查看
+        tbody
+          each item in users
+            tr(class="item-id-#{item._id}")
+              td #{item.name}
+              td #{item.level}
+              //-td #{moment(item.registTime).format('MM/DD/YYYY')}}
+              td: a(target="_blank", href="/user/#{item._id}") 查看

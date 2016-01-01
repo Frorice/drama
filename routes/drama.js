@@ -5,6 +5,7 @@ var drama  = express.Router();
 drama.get('/:did',function(req,res){
   //模板根目录为 views
   res.render('./drama/detail',{
+    title:'一公升的眼泪',
     drama:{
       id:req.params.did,
       poster:'',
@@ -13,12 +14,12 @@ drama.get('/:did',function(req,res){
       summary:'一公升的眼泪',
       episodes:{
         episodes1:{
-          id:1,
+          _id:1,
           name:'第一集',
           flash:''
         },
         episodes2:{
-          id:2,
+          _id:2,
           name:'第二集',
           flash:''
         }
@@ -33,8 +34,9 @@ drama.get('/:did',function(req,res){
 
 drama.get('/:did/:eid',function(req,res){
   res.render('./drama/play',{
+    title:'第一集-一公升的眼泪',
     episode:{
-      id:req.params.eid,
+      _id:req.params.eid,
       name:'第一集',
       flash:''
     }

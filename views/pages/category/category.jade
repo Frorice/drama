@@ -1,12 +1,12 @@
 extends ../../layout
 
 block content
-  #category
+  .category
     .panel-body
             if cat.dramas
               each drama in cat.dramas
                 .thumbnail
-                  a(href="/drama/#{drama.id}")
+                  a(href="/drama/#{drama._id}")
                     img(src="#{drama.poster}", alt="#{drama.name}")
                   .caption
                     h4 #{drama.name}
