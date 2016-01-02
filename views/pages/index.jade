@@ -2,8 +2,6 @@ extends ../layout
 
 block content
   .index
-    h1 哆啦马
-    hr
     each cat in categories
       .panel.panel-default
         .panel-heading
@@ -14,6 +12,6 @@ block content
             each drama in cat.dramas
               .thumbnail
                 a(href="/drama/#{drama._id}")
-                  img(src="#{drama.poster}", alt="#{drama.name}")
+                  img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")
                 .caption
                   h4 #{drama.name}

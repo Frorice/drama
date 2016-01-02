@@ -3,7 +3,7 @@ extends ../../layout
 block content
   #detail
     #detail-left
-      img(href="#{drama.poster}",alt="#{drama.name}") 
+      img(class="pure-img",href="#{drama.poster}",alt="#{drama.name}") 
       #episodes
         each episode in drama.episodes
           #episode

@@ -5,8 +5,10 @@ var drama = require('./routes/drama');
 var cat = require('./routes/cat');
 var root = require('./routes/root');
 var admin = require('./routes/admin');
-var app = express();
+var path  = require('path');
 
+var app = express();
+var staticfile = path.join(__dirname,'public');
 //设置模板引擎
 app.set('views','./views/pages');
 app.set('view engine','jade');
@@ -20,7 +22,11 @@ app.use(root);
 app.use('/user',user);
 app.use('/drama',drama);
 app.use('/cat',cat);
-app.use('/admin',admin);
+app.use('/admin',admin); 
+
+//配置静态目录
+
+app.use(express.static(staticfile));
 
 app.listen(3000,function(){
 	console.log('Server is running at port 3000');
