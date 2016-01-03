@@ -1,12 +1,17 @@
 extends ../../layout
 
 block content
-  .category
-    .panel-body
-            if cat.dramas
-              each drama in cat.dramas
-                .thumbnail
-                  a(href="/drama/#{drama._id}")
-                    img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")
-                  .caption
-                    h4 #{drama.name}
+  .f-content
+    .category.pure-g
+      .panel.pure-u-1
+          .panel-heading
+            h3
+              a.cat(href="/cat/#{cat._id}") #{cat.name}
+      .panel-body.pure-u-1
+              if cat.dramas
+                each drama in cat.dramas
+                  .thumbnail.pure-u-3-16
+                    a(href="/drama/#{drama._id}")
+                      img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")
+                    .caption
+                      span #{drama.name}

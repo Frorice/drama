@@ -1,16 +1,17 @@
 extends ../../layout
 
 block content
-  .addra
-    form(method="post" action="")
-      label 电视剧名:
-        input(type="text" name="name" value="#{drama.name}") 
-      label 简介:
-        input(type="textarea" name="summary" value="#{drama.summary}")
-      label 类别:
-        input(type="text" name="category" value="#{drama.category.name}")
-      label 剧集名称(用“|”分割每一集):
-        input(type="textarea" name="episodeName" value="#{episodes.name}")
-      label 剧集地址(用“|”分割每一集):
-        input(type="textarea" name="episodes" value="#{episodes.flash}")
-      input(type="submit" value="确定")
+  .f-content
+    .addra
+      form(method="post" action="")
+        label 电视剧名:
+          input(type="text" name="name" value="#{drama.name}") 
+        label 简介:
+          input(type="textarea" name="summary" value="#{drama.summary}")
+        label 类别:
+          input(type="text" name="category" value="#{drama.category.name}")
+        label 剧集名称(用“|”分割每一集):
+          input(type="textarea" name="episodeName" value="#{episodes.name}")
+        label 剧集地址(用“|”分割每一集):
+          input(type="textarea" name="episodes" value="#{episodes.flash}")
+        input(type="submit" value="确定")

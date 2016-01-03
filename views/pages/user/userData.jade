@@ -1,18 +1,19 @@
 extends ../../layout
 
 block content
-  .set-data
-    form(method="post" action="")
-      label 昵称:
-        input(name="name",type="text")
-      br
-      label 年龄:
-        input(name="name",type="text")
-      br
-      label 注册时间:
-        input(name="name",type="text")
-      br
-      label 联系方式:
-        input(name="name",type="text")
-      br
-      input(type="submit",value="保存")
+  .f-content
+    .set-data
+      form(method="post" action="")
+        label 昵称:
+          input(name="name",type="text")
+        br
+        label 年龄:
+          input(name="name",type="text")
+        br
+        label 注册时间:
+          input(name="name",type="text")
+        br
+        label 联系方式:
+          input(name="name",type="text")
+        br
+        input(type="submit",value="保存")

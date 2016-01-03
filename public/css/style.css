@@ -1,3 +1,19 @@
+
+@media(min-width:768px){
+  html{
+    font-size: 10.24px;
+  }
+}
+@media(min-width:960px){
+  html{
+    font-size: 12.8px;
+  }
+}
+@media(min-width:1024px){
+  html{
+    font-size: 16px;
+  }
+}
 body{
   color:#6e6a6a;
   background-color: #f1f1f1;
@@ -11,37 +27,118 @@ body{
   right: 0;
   left: 0;
   z-index: 1999999999;
-}
-.header,.footer{
   background: #fff;
-  padding-left: 30px;
-  padding-right: 30px;
-  min-width: 943px;
+}
+.header,.footer-container{
+  background: #fff;
+  padding-left: 2rem;
+  padding-right: 2rem;
   position: relative;
 }
 .header{
   border-bottom: 1px solid #e8e8e8;
-  padding-bottom: 8px;
-  padding-top: 10px;
+  padding-bottom: .5rem;
+  padding-top: .6rem;
 }
-.footer{
+.footer-container{
   border-top: 1px solid #e8e8e8;
-  margin-top: 50px;
-  height: 50px;
+  margin-top: 3.2rem;
+  height: 3.2rem;
 }
 .signin,.signup{
   float: right;
 }
 .signup{
-  margin-right: 15px;
+  margin-right: 1rem;
 }
 .brand>img{
-  height: 32px;
-  margin-left: 20px;
+  height: 2rem;
+  margin-left: 1.25rem;
 }
 .search input[type="text"]{
-    margin-right: 5px;
+    margin-right: .3rem;
 }
-.index{
-  margin-top: 80px;
+.index,.f-content{
+  margin: 0 auto;
+  margin-top: 5rem;
+  background-color: #ffffff;
+  width: 64rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+.thumbnail{
+  display: inline-block;
+}
+.thumbnail img{
+  width: 12rem;
+  height: 6.75rem;
+}
+.thumbnail.pure-u-3-16{
+  padding: 0 .4rem;
+  padding-bottom: 1rem;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+a.cat{
+  color: #333;
+}
+a.cat:hover{
+  color:#167ac6;
+}
+a.pure-button:hover,a.cat:hover,a.noline:hover{
+  text-decoration: none;
+}
+.caption>span{
+  width: 12rem;
+  margin-top: .5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+.detail>div{
+  padding: 1rem;
+}
+.detail-left>img{
+  width: 20rem;
+  height: 11.25rem;
+}
+.detail-right>ul{
+  list-style-type: none;
+  line-height: 1.75rem;
+  margin-top: 0;
+  max-height: 11.25rem;
+  padding-left: 0;
+}
+.episode{
+  padding: .25rem;
+  border: 1px solid #e2e2e2;
+  border-radius: .25rem;
+  text-align: center;
+
+  margin-right: .75rem;
+  margin-top: .5em;
+  transition:.5s border ease;
+}
+.episode:hover{
+  border: 1px solid #0078e7;
+}
+.episode>a{
+  color: #6d757a;
+  display: inline-block;
+}
+.f-content>.list{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.f-content>.list>table{
+  width: 100%;
+}
+@media(max-width: 768px){
+
 }

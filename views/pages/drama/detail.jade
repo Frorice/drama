@@ -1,18 +1,19 @@
 extends ../../layout
 
 block content
-  #detail
-    #detail-left
-      img(class="pure-img",href="#{drama.poster}",alt="#{drama.name}") 
-      #episodes
-        each episode in drama.episodes
-          #episode
-            a(href="./#{drama._id}/#{episode._id}") #{episode._id}
-    #detail-right
-      ul
-        li 
-          label 名称:#{drama.name}
-        li
-          label 年代:#{drama.time}
-        li
-          label 简介:#{drama.summary}
+  .f-content.pure-g
+    .detail.pure-u-1
+      .detail-left.pure-u-5-16
+        img(class="pure-img",href="#{drama.poster}",alt="#{drama.name}") 
+      .detail-right.pure-u-5-8
+        ul
+          li 
+            label 名称:#{drama.name}
+          li
+            label 年代:#{drama.time}
+          li
+            label 简介:#{drama.summary}
+      .episodes.pure-u-15-16
+          each episode in drama.episodes
+            .episode.pure-u-1-12
+              a.noline.pure-u-1(href="./#{drama._id}/#{episode._id}" title="#{episode.name}") #{episode._id}

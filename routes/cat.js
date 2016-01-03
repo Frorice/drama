@@ -3,8 +3,10 @@ var cat = express.Router();
 
 cat.get('/:cid',function(req,res){
   res.render('./category/category',{
+    title:'分类页',
     cat:{
-      title:'分类页',
+      _id:5,
+      name:'悬疑',
       dramas:{
         drama1:{
           _id:5,
