@@ -2,23 +2,28 @@ extends ../../layout
 
 block content
   .f-content
-    .myspace
-      .set-mydata
-        a(class="pure-img",href="./#{personal._id}/data") 修改个人资料
-      .mydata
-        .avt
-          img(src="#{personal.avt}")
-        .personaldata
+    .myspace.pure-g
+      .mydata.pure-u-1
+        .avt.pure-u-1-4
+          a.set-mydata.pure-u-1(href="./#{personal._id}/data") 修改个人资料
+          img(class="pure-img",src="#{personal.avt}")
+        .personaldata.pure-u-3-4
           mixin line(item1,item2,value1,value2)
             tr
               td
                 label=item1+'：'+value1
               td
                 label=item2+'：'+value2
-          table
+          table.pure-table.pure-table-horizontal
             +line('昵称','年龄',personal.data.name,personal.data.age)
             +line('注册时间','联系方式',personal.data.registTime,personal.data.touch)
-      .myfavorite
-        ul
-          each item in personal.favorite
-            li #{item}
+      .myfavorite.pure-u-1
+        h3 我的收藏
+        .panel-body.pure-u-1
+          if personal.favorite.dramas
+            each drama in personal.favorite.dramas
+              .thumbnail.pure-u-3-16
+                a(href="/drama/#{drama._id}")
+                  img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")
+                .caption
+                  span #{drama.name}

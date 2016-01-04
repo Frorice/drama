@@ -14,11 +14,25 @@
     font-size: 16px;
   }
 }
+html,body{
+  height: 100%;
+}
 body{
   color:#6e6a6a;
   background-color: #f1f1f1;
 }
-.small{
+#container{
+  min-height: 100%;
+  height: auto!important;
+  height: 100%;
+  position: relative;
+}
+.content-container{
+  height: 100%;
+  padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
+}
+.small,input{
    font-size: 85%;
 }
 .header-container{
@@ -31,8 +45,6 @@ body{
 }
 .header,.footer-container{
   background: #fff;
-  padding-left: 2rem;
-  padding-right: 2rem;
   position: relative;
 }
 .header{
@@ -42,30 +54,35 @@ body{
 }
 .footer-container{
   border-top: 1px solid #e8e8e8;
-  margin-top: 3.2rem;
   height: 3.2rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 .signin,.signup{
   float: right;
-}
-.signup{
   margin-right: 1rem;
+
 }
-.brand>img{
+.brand img{
   height: 2rem;
   margin-left: 1.25rem;
 }
 .search input[type="text"]{
-    margin-right: .3rem;
+  margin-right: .3rem;
+}
+.text-center{
+  text-align: center;
 }
 .index,.f-content{
   margin: 0 auto;
-  margin-top: 5rem;
   background-color: #ffffff;
   width: 64rem;
   padding-left: 1rem;
   padding-bottom: 1rem;
   padding-right: 1rem;
+  margin-bottom: 1rem;
 }
 .thumbnail{
   display: inline-block;
@@ -138,6 +155,77 @@ a.pure-button:hover,a.cat:hover,a.noline:hover{
 }
 .f-content>.list>table{
   width: 100%;
+}
+.addra{
+  padding-top: 1rem;
+}
+.addra legend{
+  font-size: 1.2rem;
+}
+.addra textarea{
+  max-width: 64rem;
+  max-height: 10rem;
+}
+.avt{
+  position: relative;
+  height: 10rem
+}
+.avt>img{
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  top:50%;
+  left:50%;
+  margin-top: -4rem;
+  margin-left:-4rem;
+}
+.set-mydata{
+  text-align: center;
+  position: absolute;
+  bottom:-.5rem; 
+  color: #296585;
+  visibility: hidden;
+}
+.avt:hover>.set-mydata{
+  visibility: visible;
+}
+.personaldata>table{
+  width: 100%;
+  border-radius: .5rem;
+}
+.myspace{
+  padding-top: 1rem;
+}
+.mydata{
+  height: 11rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+.set-data{
+  padding-top: 1rem;
+}
+.sign{
+  padding-top: 1rem;
+}
+.more{
+  font-size: .35rem;
+  color: #555;
+  border: 1px solid #e2e2e2;
+  padding: .35rem .5rem;
+  border-radius: .35rem;
+  transition:.5s border-color ease;
+}
+.more:hover{
+  text-decoration: none;
+  border-color:#0078e7;
+}
+.play{
+  width: 48rem;
+  margin: 0 auto;
+}
+.play>embed{
+  width:100%;
+  height:27rem;
 }
 @media(max-width: 768px){
 

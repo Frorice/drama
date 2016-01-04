@@ -5,8 +5,10 @@ block content
     each cat in categories
       .panel.pure-u-1
         .panel-heading
-          h3
+          h3.pure-u-22-24
             a.cat(href="/cat/#{cat._id}") #{cat.name}
+          h5.pure-u-2-24
+            a.more(href="/cat/#{cat._id}") 更多>>
         .panel-body.pure-u-1
           if cat.dramas
             each drama in cat.dramas

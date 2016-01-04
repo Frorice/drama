@@ -2,9 +2,9 @@ extends ../layout
 
 block content
   .f-content  
-    form(method="post",action="")
-      input(type="mail",placeholder="邮箱",name="mail")
-      br
-      input(type="password",name="password")
-      br
-      input(type="submit",value="登录")
+    .sign
+      form.pure-form(method="post",action="")
+        fieldset.pure-group
+          input.pure-input-1(type="email",placeholder="邮箱",name="mail")
+          input.pure-input-1(type="password",placeholder="密码",name="password")
+        input.pure-input-1.pure-button.pure-button-primary.small(type="submit",value="登录")

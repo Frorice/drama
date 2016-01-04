@@ -3,15 +3,17 @@ extends ../../layout
 block content
   .f-content
     .addra
-      form(method="post" action="")
-        label 电视剧名:
-          input(type="text" name="name" value="#{drama.name}") 
-        label 简介:
-          input(type="textarea" name="summary" value="#{drama.summary}")
-        label 类别:
-          input(type="text" name="category" value="#{drama.category.name}")
-        label 剧集名称(用“|”分割每一集):
-          input(type="textarea" name="episodeName" value="#{episodes.name}")
-        label 剧集地址(用“|”分割每一集):
-          input(type="textarea" name="episodes" value="#{episodes.flash}")
-        input(type="submit" value="确定")
+      form.pure-form.pure-form-stacked(method="post" action="")
+        fieldset
+          legend 添加电视剧
+          label 剧名:
+          input.pure-input-1(type="text" name="name" value="#{drama.name}") 
+          label 类别:
+          input.pure-input-1(type="text" name="category" value="#{drama.category.name}")
+          label 简介:
+          textarea.pure-input-1(name="summary" value="#{drama.summary}")
+          label 剧集名称(用“|”分割每一集):
+          textarea.pure-input-1(type="textarea" name="episodeName" value="#{episodes.name}")
+          label 剧集地址(用“|”分割每一集):
+          textarea.pure-input-1(type="textarea" name="episodes" value="#{episodes.flash}")
+          input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")
