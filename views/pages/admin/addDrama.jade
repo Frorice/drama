@@ -3,17 +3,27 @@ extends ../../layout
 block content
   .f-content
     .addra
-      form.pure-form.pure-form-stacked(method="post" action="")
+      form.pure-form.pure-form-stacked(method="post" action="/admin/drama" enctype="multipart/form-data")
         fieldset
           legend 添加电视剧
           label 剧名:
-          input.pure-input-1(type="text" name="name" value="#{drama.name}") 
+          input.pure-input-1(type="text" name="drama[name]" value="#{drama.name}") 
           label 类别:
-          input.pure-input-1(type="text" name="category" value="#{drama.category.name}")
+          input.pure-input-1(type="text" name="drama[categoryName]" value="#{drama.categoryName}")
+          label 分类选择:
+          each cat in categories
+            label.radio-inline
+              if movie.category
+                input(type="radio", name="drama[category]", value=cat._id, checked=cat._id.toString()==drama.category.toString())
+              else
+                input(type="radio", name="drama[category]", value=cat._id)
+              | #{cat.name}
+          label 海报上传:
+            input#uploadPoster(type="file", name="uploadPoster")
           label 简介:
-          textarea.pure-input-1(name="summary" value="#{drama.summary}")
+          textarea.pure-input-1(name="drama[summary]" value="#{drama.summary}")
           label 剧集名称(用“|”分割每一集):
-          textarea.pure-input-1(type="textarea" name="episodeName" value="#{episodes.name}")
+          textarea.pure-input-1(type="textarea" name="drama[episodeName]" value="#{episodes.name}")
           label 剧集地址(用“|”分割每一集):
-          textarea.pure-input-1(type="textarea" name="episodes" value="#{episodes.flash}")
+          textarea.pure-input-1(type="textarea" name="drama[episodes]" value="#{episodes.flash}")
           input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")

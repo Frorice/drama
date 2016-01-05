@@ -3,8 +3,8 @@ extends ../layout
 block content
   .f-content  
     .sign
-      form.pure-form(method="post",action="")
+      form.pure-form(method="post",action="" enctype='multipart/form-data')
         fieldset.pure-group
-          input.pure-input-1(type="email",placeholder="邮箱",name="mail")
-          input.pure-input-1(type="password",placeholder="密码",name="password")
+          input.pure-input-1(type="text",placeholder="用户名",name="user[name]")
+          input.pure-input-1(type="password",placeholder="密码",name="user[password]")
         input.pure-input-1.pure-button.pure-button-primary.small(type="submit",value="登录")
