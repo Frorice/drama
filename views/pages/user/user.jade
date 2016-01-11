@@ -5,8 +5,8 @@ block content
     .myspace.pure-g
       .mydata.pure-u-1
         .avt.pure-u-1-4
-          a.set-mydata.pure-u-1(href="./#{personal._id}/data") 修改个人资料
-          img(class="pure-img",src="#{personal.avt}")
+          a.set-mydata.pure-u-1(href="./#{user._id}/data") 修改个人资料
+          img(class="pure-img",src="#{user.avt}")
         .personaldata.pure-u-3-4
           mixin line(item1,item2,value1,value2)
             tr
@@ -15,15 +15,15 @@ block content
               td
                 label=item2+'：'+value2
           table.pure-table.pure-table-horizontal
-            +line('昵称','年龄',personal.data.name,personal.data.age)
-            +line('注册时间','联系方式',personal.data.registTime,personal.data.touch)
+            +line('昵称','年龄',user.name,user.data.age)
+            +line('注册时间','个人信息',user.data.registTime,user.data.info)
       .myfavorite.pure-u-1
         h3 我的收藏
         .panel-body.pure-u-1
-          if personal.favorite.dramas
-            each drama in personal.favorite.dramas
-              .thumbnail.pure-u-3-16
-                a(href="/drama/#{drama._id}")
-                  img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")
-                .caption
-                  span #{drama.name}
+          //- if user.favorite.dramas
+          //-   each drama in personal.favorite.dramas
+          //-     .thumbnail.pure-u-3-16
+          //-       a(href="/drama/#{drama._id}")
+          //-         img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")
+          //-       .caption
+          //-         span #{drama.name}

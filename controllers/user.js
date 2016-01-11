@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
 require('./models/user')
 var User = mongoose.model('User')
+var _ = require('underscore')
 
 // signup
 exports.showSignup = function(req, res) {
@@ -17,7 +18,6 @@ exports.showSignin = function(req, res) {
 
 exports.signup = function(req, res) {
   var _user = req.body.user
-
   User.findOne({name: _user.name},  function(err, user) {
     if (err) {
       console.log(err)
@@ -93,24 +93,23 @@ exports.list = function(req, res) {
   })
 }
 exports.detail = function(req,res){
-  User.findById(req.param.id,function(err,user){
+  User.findById(req.params.id,function(err,user){
     if(err){
       console.log(err);
     }
-
-    res.render('./drama/detail',{
+    res.render('./user/user',{
       title:user.name,
       user:user
     });
   });
 }
 exports.getData = function(req,res){
-  User.findById(req.param.id,function(err,user){
+  User.findById(req.params.id,function(err,user){
     if(err){
       console.log(err);
     }
 
-    res.render('./drama/data',{
+    res.render('./user/userData',{
       title:"修改资料",
       user:user
     });
@@ -120,7 +119,7 @@ exports.saveData = function(req,res){
   var userObj = req.body.user;
   var _user;
 
-  User.findById(req.param.id,function(err,user){
+  User.findById(req.params.id,function(err,user){
     if(err){
       console.log(err);
     }
