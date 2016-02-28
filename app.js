@@ -28,16 +28,6 @@ app.set('view engine','jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-//设置存储路径和文件名
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, '/public/upload');
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.name);
-  }
-})
-var upload = multer({ storage: storage });
 
 app.use(session({
   secret: 'drama',

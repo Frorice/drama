@@ -1,0 +1,256 @@
+
+Running node-supervisor with
+  program 'app.js'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node app.js'
+Watching directory '/root/drama' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Mon, 11 Jan 2016 08:55:06 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Mon, 11 Jan 2016 08:55:06 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+Server is running at port 3000
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+{ [CastError: Cast to ObjectId failed for value "undefined" at path "_id"]
+  message: 'Cast to ObjectId failed for value "undefined" at path "_id"',
+  name: 'CastError',
+  kind: 'ObjectId',
+  value: 'undefined',
+  path: '_id',
+  reason: undefined }
+/root/drama/controllers/user.js:101
+      title:user.name,
+                ^
+
+TypeError: Cannot read property 'name' of undefined
+    at /root/drama/controllers/user.js:101:17
+    at /root/drama/node_modules/mongoose/lib/query.js:2136:21
+    at /root/drama/node_modules/kareem/index.js:160:11
+    at Query._findOne (/root/drama/node_modules/mongoose/lib/query.js:1142:12)
+    at /root/drama/node_modules/kareem/index.js:156:8
+    at /root/drama/node_modules/kareem/index.js:18:7
+    at doNTCallback0 (node.js:428:9)
+    at process._tickCallback (node.js:357:13)
+
+Running node-supervisor with
+  program '.'
+  --watch '.'
+  --extensions 'node,js'
+  --exec 'node'
+
+Starting child process with 'node .'
+Watching directory '/root/drama' for changes.
+Press rs for restarting the process.
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+Tue, 12 Jan 2016 05:40:16 GMT express-session deprecated undefined resave option; provide resave option at app.js:42:9
+Tue, 12 Jan 2016 05:40:16 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:42:9
+Server is running at port 3000
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+TypeError: /root/drama/views/pages/admin/addDrama.jade:26
+    24|           textarea.pure-input-1(name="drama[summary]" value="#{drama.summary}")
+    25|           label 剧集名称(用“|”分割每一集):
+  > 26|           textarea.pure-input-1(type="textarea" name="drama[episodeName]" value="#{episodes.name}")
+    27|           label 剧集地址(用“|”分割每一集):
+    28|           textarea.pure-input-1(type="textarea" name="drama[episodes]" value="#{episodes.flash}")
+    29|           input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")
+
+Cannot read property 'name' of undefined
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:318:104)
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:389:22)
+    at res (/root/drama/node_modules/jade/lib/index.js:219:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:380:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:370:21)
+    at View.exports.__express [as engine] (/root/drama/node_modules/jade/lib/index.js:417:11)
+    at View.render (/root/drama/node_modules/express/lib/view.js:126:8)
+    at tryRender (/root/drama/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/root/drama/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/root/drama/node_modules/express/lib/response.js:961:7)
+    at Query.<anonymous> (/root/drama/controllers/drama.js:51:9)
+    at /root/drama/node_modules/kareem/index.js:177:19
+    at /root/drama/node_modules/kareem/index.js:109:16
+    at doNTCallback0 (node.js:428:9)
+    at process._tickCallback (node.js:357:13)
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+TypeError: /root/drama/views/pages/admin/addDrama.jade:26
+    24|           textarea.pure-input-1(name="drama[summary]" value="#{drama.summary}")
+    25|           label 剧集名称(用“|”分割每一集):
+  > 26|           textarea.pure-input-1(type="textarea" name="drama[episodeName]" value="#{episodes.name}")
+    27|           label 剧集地址(用“|”分割每一集):
+    28|           textarea.pure-input-1(type="textarea" name="drama[episodes]" value="#{episodes.flash}")
+    29|           input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")
+
+Cannot read property 'name' of undefined
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:318:104)
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:389:22)
+    at res (/root/drama/node_modules/jade/lib/index.js:219:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:380:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:370:21)
+    at View.exports.__express [as engine] (/root/drama/node_modules/jade/lib/index.js:417:11)
+    at View.render (/root/drama/node_modules/express/lib/view.js:126:8)
+    at tryRender (/root/drama/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/root/drama/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/root/drama/node_modules/express/lib/response.js:961:7)
+    at Query.<anonymous> (/root/drama/controllers/drama.js:51:9)
+    at /root/drama/node_modules/kareem/index.js:177:19
+    at /root/drama/node_modules/kareem/index.js:109:16
+    at doNTCallback0 (node.js:428:9)
+    at process._tickCallback (node.js:357:13)
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+TypeError: /root/drama/views/pages/admin/addDrama.jade:26
+    24|           textarea.pure-input-1(name="drama[summary]" value="#{drama.summary}")
+    25|           label 剧集名称(用“|”分割每一集):
+  > 26|           textarea.pure-input-1(type="textarea" name="drama[episodeName]" value="#{episodes.name}")
+    27|           label 剧集地址(用“|”分割每一集):
+    28|           textarea.pure-input-1(type="textarea" name="drama[episodes]" value="#{episodes.flash}")
+    29|           input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")
+
+Cannot read property 'name' of undefined
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:318:104)
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:389:22)
+    at res (/root/drama/node_modules/jade/lib/index.js:219:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:380:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:370:21)
+    at View.exports.__express [as engine] (/root/drama/node_modules/jade/lib/index.js:417:11)
+    at View.render (/root/drama/node_modules/express/lib/view.js:126:8)
+    at tryRender (/root/drama/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/root/drama/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/root/drama/node_modules/express/lib/response.js:961:7)
+    at Query.<anonymous> (/root/drama/controllers/drama.js:51:9)
+    at /root/drama/node_modules/kareem/index.js:177:19
+    at /root/drama/node_modules/kareem/index.js:109:16
+    at doNTCallback0 (node.js:428:9)
+    at process._tickCallback (node.js:357:13)
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+TypeError: /root/drama/views/pages/admin/addDrama.jade:26
+    24|           textarea.pure-input-1(name="drama[summary]" value="#{drama.summary}")
+    25|           label 剧集名称(用“|”分割每一集):
+  > 26|           textarea.pure-input-1(type="textarea" name="drama[episodeName]" value="#{episodes.name}")
+    27|           label 剧集地址(用“|”分割每一集):
+    28|           textarea.pure-input-1(type="textarea" name="drama[episodes]" value="#{episodes.flash}")
+    29|           input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")
+
+Cannot read property 'name' of undefined
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:318:104)
+    at eval (eval at <anonymous> (/root/drama/node_modules/jade/lib/index.js:218:8), <anonymous>:389:22)
+    at res (/root/drama/node_modules/jade/lib/index.js:219:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:380:38)
+    at Object.exports.renderFile (/root/drama/node_modules/jade/lib/index.js:370:21)
+    at View.exports.__express [as engine] (/root/drama/node_modules/jade/lib/index.js:417:11)
+    at View.render (/root/drama/node_modules/express/lib/view.js:126:8)
+    at tryRender (/root/drama/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/root/drama/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/root/drama/node_modules/express/lib/response.js:961:7)
+    at Query.<anonymous> (/root/drama/controllers/drama.js:51:9)
+    at /root/drama/node_modules/kareem/index.js:177:19
+    at /root/drama/node_modules/kareem/index.js:109:16
+    at doNTCallback0 (node.js:428:9)
+    at process._tickCallback (node.js:357:13)
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+Warning: missing space before text for line 14 of jade file "/root/drama/views/include/header.jade"
+{ [CastError: Cast to ObjectId failed for value "undefined" at path "_id"]
+  message: 'Cast to ObjectId failed for value "undefined" at path "_id"',
+  name: 'CastError',
+  kind: 'ObjectId',
+  value: 'undefined',
+  path: '_id',
+  reason: undefined }
+/root/drama/controllers/user.js:101
+      title:user.name,
+                ^
+
+TypeError: Cannot read property 'name' of undefined
+    at /root/drama/controllers/user.js:101:17
+    at /root/drama/node_modules/mongoose/lib/query.js:2136:21
+    at /root/drama/node_modules/kareem/index.js:160:11
+    at Query._findOne (/root/drama/node_modules/mongoose/lib/query.js:1142:12)
+    at /root/drama/node_modules/kareem/index.js:156:8
+    at /root/drama/node_modules/kareem/index.js:18:7
+    at doNTCallback0 (node.js:428:9)
+    at process._tickCallback (node.js:357:13)

@@ -11,8 +11,7 @@ var path = require('path')
 
 // detail page
 exports.detail = function(req, res) {
-  var id = req.params.id
-
+  var id = req.params.did
   Drama.findById(id, function(err, drama) {
     Comment
       .find({drama: id})
@@ -51,7 +50,8 @@ exports.new = function(req, res) {
     res.render('./admin/addDrama', {
       title: 'DRAMA录入页',
       categories: categories,
-      drama: {}
+      drama: {},
+      episodes:{}
     })
   })
 }
@@ -66,7 +66,8 @@ exports.update = function(req, res) {
         res.render('./admin/addDrama', {
           title: 'DRAMA更新页',
           drama: drama,
-          categories: categories
+          categories: categories,
+          episodes:{}
         })
       })
     })
@@ -75,19 +76,20 @@ exports.update = function(req, res) {
 
 // admin poster
 exports.savePoster = function(req, res, next) {
-  var posterData = req.files.uploadPoster
+  var posterData = req.file
   var filePath = posterData.path
-  var originalFilename = posterData.originalFilename
-
+  var originalFilename = posterData.originalname
   if (originalFilename) {
+
     fs.readFile(filePath, function(err, data) {
       var timestamp = Date.now()
-      var type = posterData.type.split('/')[1]
+      var type = originalFilename.split('.')[1]
       var poster = timestamp + '.' + type
-      var newPath = path.join(__dirname, '../../', '/public/upload/' + poster)
-
+      var newPath = path.join(__dirname, '../', '/public/upload/' + poster)
       fs.writeFile(newPath, data, function(err) {
         req.poster = poster
+        //删除 原文件
+        fs.unlinkSync(filePath)
         next()
       })
     })
@@ -168,7 +170,7 @@ exports.list = function(req, res) {
         console.log(err)
       }
 
-      res.render('dramaList', {
+      res.render('./admin/dramaList', {
         title: 'Drama列表页',
         dramas: dramas
       })

@@ -5,7 +5,7 @@ var Category = mongoose.model('Category')
 var Drama = mongoose.model('Drama')
 // admin new page
 exports.new = function(req, res) {
-  res.render('./admin/clist', {
+  res.render('./admin/addCategory', {
     title: '分类录入页',
     category: {}
   })
@@ -27,7 +27,7 @@ exports.save = function(req, res) {
 
 // catelist page
 exports.list = function(req, res) {
-  Category.fetch(function(err, catetories) {
+  Category.fetch(function(err, categories) {
     if (err) {
       console.log(err)
     }
@@ -48,7 +48,8 @@ exports.getCate = function(req,res){
       .exec(function(err, dramas) {
         res.render('./category/category', {
           title: category.name,
-          dramas: dramas
+          dramas: dramas,
+          cat:category
         })
       })
   })

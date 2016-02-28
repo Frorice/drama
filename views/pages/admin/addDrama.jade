@@ -13,10 +13,10 @@ block content
           label 分类选择:
           each cat in categories
             label.radio-inline
-              if movie.category
-                input(type="radio", name="drama[category]", value=cat._id, checked=cat._id.toString()==drama.category.toString())
+              if drama.category
+                input(type="radio", name="drama[category]", value="#{cat._id}", checked="#{cat._id.toString() == drama.category.toString()}")
               else
-                input(type="radio", name="drama[category]", value=cat._id)
+                input(type="radio", name="drama[category]", value="#{cat._id}")
               | #{cat.name}
           label 海报上传:
             input#uploadPoster(type="file", name="uploadPoster")

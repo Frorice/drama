@@ -15,8 +15,11 @@ block content
             th 删除
         tbody
           each item in dramas
-            tr(class="item-id-#{item._id}")
-              td #{item.category.name}
+            tr(class="item-id-#{item._id}") 
+              if item.category
+                td #{item.category.name}
+              else
+                td 无分类
               td #{item.name}
               td #{item.year}
               //-td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}}

@@ -24,6 +24,6 @@ user.get('/:id/data',User.signinRequired,User.getData);
 
 user.post('/:id/data',upload.single('avt'),User.signinRequired,User.saveData);
 
-user.post('/comment',upload.single('avt'),User.signinRequired, Comment.save)
+user.post('/comment',User.signinRequired, Comment.save)
 
 module.exports = user;
