@@ -41,6 +41,7 @@ exports.signup = function(req, res) {
 
 // signin
 exports.signin = function(req, res) {
+  console.log(req)
   var _user = req.body.user
   var name = _user.name
   var password = _user.password
@@ -118,7 +119,7 @@ exports.getData = function(req,res){
 exports.saveData = function(req,res){
   var userObj = req.body.user;
   var _user;
-
+  console.log("ssss")
   User.findById(req.params.id,function(err,user){
     if(err){
       console.log(err);
