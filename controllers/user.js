@@ -1,7 +1,11 @@
 var mongoose = require('mongoose')
+var _ = require('underscore')
+var fs = require('fs')
+var path = require('path')
 require('./models/user')
 var User = mongoose.model('User')
-var _ = require('underscore')
+
+
 
 // signup
 exports.showSignup = function(req, res) {
@@ -116,15 +120,46 @@ exports.getData = function(req,res){
     });
   });
 }
+
+exports.saveAvt = function(req, res, next) {
+  var avtData = req.file
+  var filePath = avtData.path
+  var originalFilename = avtData.originalname
+  if (originalFilename) {
+
+    fs.readFile(filePath, function(err, data) {
+      var timestamp = Date.now()
+      var type = originalFilename.split('.')[1]
+      var avt = '/upload/'+ timestamp + '.' + type
+      var newPath = path.join(__dirname, '../', '/public' + avt)
+      fs.writeFile(newPath, data, function(err) {
+        req.avt = avt;
+        //删除 原文件
+        fs.unlinkSync(filePath)
+        next()
+      })
+    })
+  }
+  else {
+    next()
+  }
+}
+
 exports.saveData = function(req,res){
   var userObj = req.body.user;
   var _user;
-  console.log("ssss")
   User.findById(req.params.id,function(err,user){
     if(err){
       console.log(err);
     }
-
+    if(req.avt){
+      //头像路径
+      //删除前一个头像
+      if(user.data.avt){
+        fs.unlinkSync(path.join(__dirname, '../', '/public' + user.data.avt));
+      }
+      userObj.data.avt = req.avt;
+    }
     _user = _.extend(user, userObj);
     _user.save(function(err, user) {
       if (err) {

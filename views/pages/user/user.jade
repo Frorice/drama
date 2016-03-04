@@ -6,7 +6,7 @@ block content
       .mydata.pure-u-1
         .avt.pure-u-1-4
           a.set-mydata.pure-u-1(href="./#{user._id}/data") 修改个人资料
-          img(class="pure-img",src="#{user.avt}")
+          img(class="pure-img",src="#{user.data.avt}")
         .personaldata.pure-u-3-4
           mixin line(item1,item2,value1,value2)
             tr

@@ -8,7 +8,7 @@ var upload = multer({
                 return filename.replace(/\W+/g, '-').toLowerCase() + Date.now();
               }});
 
-console.log("sss")
+
 //控制器
 var User = require('../controllers/user')
 var Drama = require('../controllers/drama')

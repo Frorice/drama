@@ -39,7 +39,6 @@ var USER = new mongoose.Schema({
 
 USER.pre('save', function(next) {
   var user = this
-
   if (user.isNew) {
     user.data.createAt = user.data.updateAt = Date.now()
   }

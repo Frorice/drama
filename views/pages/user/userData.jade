@@ -9,15 +9,15 @@ block content
           input.pure-input-2-3(name="user[name]",type="text",value="#{user.name}")
         div.pure-control-group
           label 年龄:
-          input.pure-input-2-3(name="user[age]",type="text",value="#{user.data.age}")
+          input.pure-input-2-3(name="user[data][age]",type="text",value="#{user.data.age}")
         div.pure-control-group
           label 头像:
           input.pure-input-2-3(name="avt",type="file")
         div.pure-control-group
           label 注册时间:
-          input.pure-input-2-3(name="user[registTime]",type="text",value="#{user.data.registTime}")
+          input.pure-input-2-3(name="user[data][registTime]",type="text",value="#{user.data.registTime}")
         div.pure-control-group
           label 个人简介:
-          input.pure-input-2-3(name="user[info]",type="text",value="#{user.data.info}")
+          input.pure-input-2-3(name="user[data][info]",type="text",value="#{user.data.info}")
         div.text-center.pure-control-group
           input.pure-button.pure-button-primary.pure-input-2-3(type="submit",value="保存")

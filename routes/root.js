@@ -3,15 +3,11 @@ var multer = require('multer');
 var root = express.Router();
 
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, '/public/upload');
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.name);
-  }
-})
-var upload = multer({ storage: storage });
+var upload = multer({
+              dest:'./public/upload/',
+              rename:function(fieldname, filename){
+                return filename.replace(/\W+/g, '-').toLowerCase() + Date.now();
+              }});
 //控制器
 var Root = require('../controllers/root')
 var User = require('../controllers/user')
