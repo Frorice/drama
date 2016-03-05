@@ -76,16 +76,18 @@ exports.update = function(req, res) {
 
 // admin poster
 exports.savePoster = function(req, res, next) {
-  var posterData = req.file
-  var filePath = posterData.path
-  var originalFilename = posterData.originalname
+  if(req.file){
+    var posterData = req.file
+    var filePath = posterData.path
+    var originalFilename = posterData.originalname
+  }
   if (originalFilename) {
 
     fs.readFile(filePath, function(err, data) {
       var timestamp = Date.now()
       var type = originalFilename.split('.')[1]
-      var poster = timestamp + '.' + type
-      var newPath = path.join(__dirname, '../', '/public/upload/' + poster)
+      var poster = '/upload/' + timestamp + '.' + type
+      var newPath = path.join(__dirname, '../', '/public' + poster)
       fs.writeFile(newPath, data, function(err) {
         req.poster = poster
         //删除 原文件
@@ -103,16 +105,27 @@ exports.savePoster = function(req, res, next) {
 exports.save = function(req, res) {
   var id = req.body.drama._id
   var dramaObj = req.body.drama
+  dramaObj.poster = req.poster
   var _drama
 
-  if (req.poster) {
-    dramaObj.poster = req.poster
-  }
+  
 
   if (id) {
     Drama.findById(id, function(err, drama) {
       if (err) {
         console.log(err)
+      }
+      
+      //若上传了海报
+      if (req.poster) {
+        dramaObj.poster = req.poster
+        
+        if(drama.poster){
+          fs.unlinkSync(path.join(__dirname, '../', '/public' + drama.poster))
+        }
+
+      }else{
+        dramaObj.poster = drama.poster
       }
 
       _drama = _.extend(drama, dramaObj)

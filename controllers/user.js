@@ -102,6 +102,7 @@ exports.detail = function(req,res){
     if(err){
       console.log(err);
     }
+    
     res.render('./user/user',{
       title:user.name,
       user:user
@@ -122,11 +123,14 @@ exports.getData = function(req,res){
 }
 
 exports.saveAvt = function(req, res, next) {
-  var avtData = req.file
-  var filePath = avtData.path
-  var originalFilename = avtData.originalname
-  if (originalFilename) {
+  
+  if(req.file){
+    var avtData = req.file
+    var filePath = avtData.path
+    var originalFilename = avtData.originalname
+  }
 
+  if (originalFilename) {
     fs.readFile(filePath, function(err, data) {
       var timestamp = Date.now()
       var type = originalFilename.split('.')[1]
@@ -159,6 +163,8 @@ exports.saveData = function(req,res){
         fs.unlinkSync(path.join(__dirname, '../', '/public' + user.data.avt));
       }
       userObj.data.avt = req.avt;
+    }else{
+      userObj.data.avt = user.data.avt;
     }
     _user = _.extend(user, userObj);
     _user.save(function(err, user) {
