@@ -15,9 +15,11 @@ exports.showSignup = function(req, res) {
 }
 
 exports.showSignin = function(req, res) {
-  res.render('signin', {
-    title: '登录页面'
-  })
+  var info = {title:'登录页面'}
+  if(req.query.passfalse === "true"){
+    info.passfalse = '密码错误！'
+  }
+  res.render('signin',info)
 }
 
 exports.signup = function(req, res) {
@@ -45,7 +47,6 @@ exports.signup = function(req, res) {
 
 // signin
 exports.signin = function(req, res) {
-  console.log(req)
   var _user = req.body.user
   var name = _user.name
   var password = _user.password
@@ -70,7 +71,7 @@ exports.signin = function(req, res) {
         return res.redirect('/user/'+user._id)
       }
       else {
-        return res.redirect('/signin')
+        return res.redirect('/signin?passfalse=true')
       }
     })
   })

@@ -7,4 +7,6 @@ block content
         fieldset.pure-group
           input.pure-input-1(type="text",placeholder="用户名",name="user[name]")
           input.pure-input-1(type="password",placeholder="密码",name="user[password]")
+          if passfalse
+            span #{passfalse}
         input.pure-input-1.pure-button.pure-button-primary.small(type="submit",value="登录")
