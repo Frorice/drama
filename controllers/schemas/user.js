@@ -8,6 +8,7 @@ var USER = new mongoose.Schema({
     type:String
   },
   password:String,
+  email:String,
   // 0 普通用户
   // 608 管理员
   level:{
@@ -15,7 +16,6 @@ var USER = new mongoose.Schema({
     default:0
   },
   data:{
-    email:String,
     age:{
       type:Number,
       default:0
@@ -41,21 +41,25 @@ USER.pre('save', function(next) {
   var user = this
   if (user.isNew) {
     user.data.createAt = user.data.updateAt = Date.now()
-  }
-  else {
-    user.data.updateAt = Date.now()
-  }
-
-  bcrypt.genSalt(SALT_COST_ROUND, function(err, salt) {
-    if (err) return next(err)
-
-    bcrypt.hash(user.password, salt, function(err, hash) {
+    //新用户注册，密码加密保存
+    bcrypt.genSalt(SALT_COST_ROUND, function(err, salt) {
       if (err) return next(err)
 
-      user.password = hash
-      next()
-    })
-  })
+      bcrypt.hash(user.password, salt, function(err, hash) {
+        if (err) return next(err)
+
+        user.password = hash
+        next()
+      })
+    })  
+  }
+  else {
+    //老用户
+    user.data.updateAt = Date.now()
+    next()
+  }
+  
+
 })
 
 USER.methods = {

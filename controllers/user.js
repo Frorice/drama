@@ -38,8 +38,8 @@ exports.signup = function(req, res) {
         if (err) {
           console.log(err)
         }
-
-        res.redirect('/')
+        req.session.user = user
+        res.redirect('/user/'+user._id)
       })
     }
   })
@@ -55,7 +55,6 @@ exports.signin = function(req, res) {
     if (err) {
       console.log(err)
     }
-
     if (!user) {
       return res.redirect('/signup')
     }
@@ -168,11 +167,12 @@ exports.saveData = function(req,res){
       userObj.data.avt = user.data.avt;
     }
     _user = _.extend(user, userObj);
+
+    
     _user.save(function(err, user) {
       if (err) {
         console.log(err);
       }
- 
       res.redirect('/user/' + user._id);
     });
 
@@ -181,9 +181,10 @@ exports.saveData = function(req,res){
 // midware for user 登录验证
 exports.signinRequired = function(req, res, next) {
   var user = req.session.user
-
   if (!user) {
     return res.redirect('/signin')
+  }else if(user._id !== req.params.id){
+    return res.redirect('/user/'+user._id)
   }
 
   next()
@@ -192,7 +193,7 @@ exports.signinRequired = function(req, res, next) {
 exports.adminRequired = function(req, res, next) {
   var user = req.session.user
 
-  if (user.role < 608) {
+  if (user.level < 608) {
     return res.redirect('/signin')
   }
 
