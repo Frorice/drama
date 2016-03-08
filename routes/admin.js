@@ -26,7 +26,7 @@ admin.get('/clist',User.signinRequired, User.adminRequired,Category.list);
 
 admin.get('/ulist',User.signinRequired, User.adminRequired,User.list);
 
-admin.post('/drama',upload.single('uploadPoster'),User.signinRequired, User.adminRequired, Drama.savePoster, Drama.save);
+admin.post('/drama',upload.single('uploadPoster'),User.signinRequired, User.adminRequired, Drama.savePoster, Drama.dealEpisodes, Drama.save);
 
 admin.post('/category',upload.single('avt'),User.signinRequired, User.adminRequired, Category.save);
 

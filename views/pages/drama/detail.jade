@@ -10,10 +10,10 @@ block content
           li 
             label 名称:#{drama.name}
           li
-            label 年代:#{drama.time}
+            label 年代:#{drama.year}
           li
             label 简介:#{drama.summary}
       .episodes.pure-u-15-16
           each episode in drama.episodes
             .episode.pure-u-1-12
-              a.noline.pure-u-1(href="./#{drama._id}/#{episode._id}" title="#{episode.name}") #{episode._id}
+              a.noline.pure-u-1(href="./#{drama._id}/#{episode._id}" title="#{episode.name}") #{episode.number}

@@ -183,8 +183,10 @@ exports.signinRequired = function(req, res, next) {
   var user = req.session.user
   if (!user) {
     return res.redirect('/signin')
-  }else if(user._id !== req.params.id){
-    return res.redirect('/user/'+user._id)
+  }else if(req.params.id){
+    if(user._id !== req.params.id){
+      return res.redirect('/user/'+user._id)
+    }
   }
 
   next()
@@ -194,6 +196,7 @@ exports.adminRequired = function(req, res, next) {
   var user = req.session.user
 
   if (user.level < 608) {
+    console.log(user.level)
     return res.redirect('/signin')
   }
 

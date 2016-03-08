@@ -7,7 +7,9 @@ block content
         fieldset
           legend 添加电视剧
           label 剧名:
-          input.pure-input-1(type="text" name="drama[name]" value="#{drama.name}") 
+          input.pure-input-1(type="text" name="drama[name]" value="#{drama.name}")
+          label 年代:
+          input.pure-input-1(type="text" name="drama[year]" value="#{drama.year}")  
           label 类别:
           input.pure-input-1(type="text" name="drama[categoryName]" value="#{drama.categoryName}")
           label 分类选择:
@@ -25,5 +27,5 @@ block content
           label 剧集名称(用“|”分割每一集):
           textarea.pure-input-1(type="textarea" name="drama[episodeName]" value="#{episodes.name}")
           label 剧集地址(用“|”分割每一集):
-          textarea.pure-input-1(type="textarea" name="drama[episodes]" value="#{episodes.flash}")
+          textarea.pure-input-1(type="textarea" name="drama[episodesFlash]" value="#{episodes.flash}")
           input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")
