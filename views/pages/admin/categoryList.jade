@@ -1,0 +1,17 @@
+extends ../../layout
+
+block content
+  .f-content
+    .list
+      table.pure-table.pure-table-horizontal
+        thead
+          tr
+            th 名称
+            th 创建时间
+            th 查看
+        tbody
+          each item in categories
+            tr(class="item-id-#{item._id}")
+              td #{item.name}
+              td #{moment(item.meta.registTime).format('YYYY/MM/DD')}
+              td: a(target="_blank", href="/cat/#{item._id}") 查看

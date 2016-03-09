@@ -32,13 +32,13 @@ exports.episodes = function(req, res) {
   
   Drama.findById(did, function(err, drama) {
     Comment
-      .find({drama: id})
+      .find({drama: did})
       .populate('from', 'name')
       .populate('reply.from reply.to', 'name')
       .exec(function(err, comments) {
-        res.render('./drama/detail', {
+        res.render('./drama/play', {
           title: drama.name,
-          drama: drama.episodes[number],
+          episode: drama.episodes[number-1],
           comments: comments
         })
       })
@@ -52,7 +52,6 @@ exports.new = function(req, res) {
       categories: categories,
       drama: {
         name:'',
-        categoryName:'',
         year:'2016'
       },
       episodes:{}
@@ -62,16 +61,30 @@ exports.new = function(req, res) {
 
 // admin update page
 exports.update = function(req, res) {
-  var id = req.params.id
+  var id = req.params.did
 
   if (id) {
     Drama.findById(id, function(err, drama) {
+
+      var episodes = {};
+      var names = [];
+      var flashs = [];
+
+      drama.episodes.forEach(function(episode){        
+        names.push(episode.name);
+        flashs.push(episode.flash);
+      });
+
+      episodes.name = names.join('|');
+      episodes.flash = flashs.join('|');
+
       Category.find({}, function(err, categories) {
+        
         res.render('./admin/addDrama', {
           title: 'DRAMA更新页',
           drama: drama,
           categories: categories,
-          episodes:{}
+          episodes:episodes
         })
       })
     })

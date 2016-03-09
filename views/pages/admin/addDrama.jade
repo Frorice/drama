@@ -11,7 +11,7 @@ block content
           label 年代:
           input.pure-input-1(type="text" name="drama[year]" value="#{drama.year}")  
           label 类别:
-          input.pure-input-1(type="text" name="drama[categoryName]" value="#{drama.categoryName}")
+          input.pure-input-1(type="text" name="drama[categoryName]" value="")
           label 分类选择:
           each cat in categories
             label.radio-inline
@@ -23,9 +23,9 @@ block content
           label 海报上传:
             input#uploadPoster(type="file", name="uploadPoster")
           label 简介:
-          textarea.pure-input-1(name="drama[summary]" value="#{drama.summary}")
+          textarea.pure-input-1(name="drama[summary]") #{drama.summary}
           label 剧集名称(用“|”分割每一集):
-          textarea.pure-input-1(type="textarea" name="drama[episodeName]" value="#{episodes.name}")
+          textarea.pure-input-1(type="textarea" name="drama[episodeName]" ) #{episodes.name}
           label 剧集地址(用“|”分割每一集):
-          textarea.pure-input-1(type="textarea" name="drama[episodesFlash]" value="#{episodes.flash}")
+          textarea.pure-input-1(type="textarea" name="drama[episodesFlash]" ) #{episodes.flash}
           input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")

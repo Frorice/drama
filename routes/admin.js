@@ -18,7 +18,7 @@ admin.get('/drama/add',User.signinRequired, User.adminRequired, Drama.new);
 
 admin.get('/category/add',User.signinRequired, User.adminRequired, Category.new);
 
-admin.get('/update/:id',User.signinRequired, User.adminRequired,Drama.update);
+admin.get('/update/:did',User.signinRequired, User.adminRequired,Drama.update);
 
 admin.get('/dlist',User.signinRequired, User.adminRequired,Drama.list);
 

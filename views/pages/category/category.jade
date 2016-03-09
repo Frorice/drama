@@ -9,7 +9,7 @@ block content
               a.cat(href="/cat/#{cat._id}") #{cat.name}
       .panel-body.pure-u-1
               if cat.dramas
-                each drama in cat.dramas
+                each drama in dramas
                   .thumbnail.pure-u-3-16
                     a(href="/drama/#{drama._id}")
                       img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")

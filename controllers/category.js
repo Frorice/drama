@@ -32,7 +32,7 @@ exports.list = function(req, res) {
       console.log(err)
     }
 
-    res.render('./category/category', {
+    res.render('./admin/categoryList', {
       title: '分类列表页',
       categories: categories
     })
