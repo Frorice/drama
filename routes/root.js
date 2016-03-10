@@ -19,6 +19,8 @@ root.get('/signin',User.showSignin);
 
 root.get('/signup',User.showSignup);
 
+root.get('/logged',Root.logged);
+
 root.get('/logout',User.logout);
 
 root.post('/signin',upload.single('avt'),User.signin);

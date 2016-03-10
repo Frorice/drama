@@ -26,6 +26,15 @@ exports.index = function(req, res) {
       })
     })
 }
+//检测登录状态
+exports.logged = function(req,res){
+  if(req.session.user){
+    res.write(req.session.user.data.avt + '-' + req.session.user._id);
+    res.end();
+  }else{
+    res.end('false');
+  }
+}
 
 // search page
 exports.search = function(req, res) {

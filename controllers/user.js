@@ -160,7 +160,11 @@ exports.saveData = function(req,res){
       //头像路径
       //删除前一个头像
       if(user.data.avt){
-        fs.unlinkSync(path.join(__dirname, '../', '/public' + user.data.avt));
+        try{
+          fs.unlinkSync(path.join(__dirname, '../', '/public' + user.data.avt));
+        }catch(err){
+          console.error(err);
+        }
       }
       userObj.data.avt = req.avt;
     }else{
@@ -173,6 +177,7 @@ exports.saveData = function(req,res){
       if (err) {
         console.log(err);
       }
+      req.session.user = user;
       res.redirect('/user/' + user._id);
     });
 
@@ -188,7 +193,6 @@ exports.signinRequired = function(req, res, next) {
       return res.redirect('/user/'+user._id)
     }
   }
-
   next()
 }
 //用户验证
