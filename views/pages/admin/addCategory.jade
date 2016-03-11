@@ -1,0 +1,11 @@
+extends ../../layout
+
+block content
+  .f-content
+    .addra
+      form.pure-form.pure-form-stacked(method="post" action="/admin/category" enctype="multipart/form-data")
+        fieldset
+          legend 添加分类
+          label 分类名:
+          input.pure-input-1(type="text" name="category[name]" value="#{category.name}")
+          input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")

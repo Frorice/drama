@@ -1,4 +1,6 @@
-var path = '';  
+(function(){
+var path = ''; 
+
 var length = location.pathname.split('/').length-1;
 while(length>0){
   path += '../';
@@ -35,5 +37,7 @@ xhr.onreadystatechange = function(){
    }
  }
 };
+
 xhr.open('get',path+'logged',true);
 xhr.send(null);
+})();

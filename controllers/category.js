@@ -7,7 +7,9 @@ var Drama = mongoose.model('Drama')
 exports.new = function(req, res) {
   res.render('./admin/addCategory', {
     title: '分类录入页',
-    category: {}
+    category: {
+      name:''
+    }
   })
 }
 
