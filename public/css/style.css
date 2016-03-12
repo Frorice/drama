@@ -239,6 +239,12 @@ a.pure-button:hover,a.cat:hover,a.noline:hover{
   border-radius: 50%;
   position: absolute;
 }
+.admin-link-group{
+  padding-top: 1rem;
+}
+.admin-link-group>table{
+  margin: 0 auto;
+}
 @media(max-width: 768px){
 
 }

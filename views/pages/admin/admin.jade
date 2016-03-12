@@ -1,0 +1,26 @@
+extends ../../layout
+
+block content
+  .f-content
+    .admin-link-group
+      table.pure-table.pure-table-bordered
+        thead
+          tr
+            th 用户管理
+            th 电视剧管理
+            th 分类管理
+        tbody
+          tr
+            td 
+              a(href="./admin/ulist" target="_blank") 用户列表
+            td 
+              a(href="./admin/dlist" target="_blank") 电视剧列表
+            td 
+              a(href="./admin/clist" target="_blank") 分类列表
+          tr
+            td
+            td 
+              a(href="./admin/drama/add" target="_blank") 添加电视剧
+            td 
+              a(href="./admin/category/add" target="_blank") 添加分类
+         

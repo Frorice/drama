@@ -10,9 +10,12 @@ var upload = multer({
 
 
 //控制器
-var User = require('../controllers/user')
-var Drama = require('../controllers/drama')
-var Category = require('../controllers/category')
+var User = require('../controllers/user');
+var Drama = require('../controllers/drama');
+var Category = require('../controllers/category');
+var Root = require('../controllers/root');
+
+admin.get('/',User.signinRequired, User.adminRequired,Root.admin);
 
 admin.get('/drama/add',User.signinRequired, User.adminRequired, Drama.new);
 

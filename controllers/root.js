@@ -36,6 +36,9 @@ exports.logged = function(req,res){
   }
 }
 
+exports.admin = function(req,res){
+  res.render('./admin/admin');
+}
 // search page
 exports.search = function(req, res) {
   var catId = req.query.cat
