@@ -8,4 +8,6 @@ block content
           legend 添加分类
           label 分类名:
           input.pure-input-1(type="text" name="category[name]" value="#{category.name}")
-          input#submit.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")
+          if err
+            span #{err.info}
+          input.pure-input-1.pure-button.pure-button-primary(type="submit" value="确定")

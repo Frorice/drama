@@ -6,7 +6,13 @@ block content
       form.pure-form(method="post",action="" enctype='multipart/form-data')
         fieldset.pure-group
           input.pure-input-1(type="text",placeholder="用户名",name="user[name]")
+          if err.name
+            span 用户名不能为空！
           input.pure-input-1(type="email",placeholder="邮箱",name="user[email]")
+          if err.email
+            span 邮件地址不能为空！
           input.pure-input-1(type="password",placeholder="输入密码",name="user[password]")
           input.pure-input-1(type="password",placeholder="确认密码",name="user[repeatPass]")
-        input#submit.pure-input-1.pure-button.pure-button-primary.small(type="submit",value="注册")
+          if err.pass
+            span 两次密码不一致！
+        input.pure-input-1.pure-button.pure-button-primary.small(type="submit",value="注册")

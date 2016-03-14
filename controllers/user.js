@@ -10,7 +10,12 @@ var User = mongoose.model('User')
 // signup
 exports.showSignup = function(req, res) {
   res.render('signup', {
-    title: '注册页面'
+    title: '注册页面',
+    err:{
+      name:false,
+      email:false,
+      pass:false
+    }
   })
 }
 
@@ -24,25 +29,48 @@ exports.showSignin = function(req, res) {
 
 exports.signup = function(req, res) {
   var _user = req.body.user
-  User.findOne({name: _user.name},  function(err, user) {
-    if (err) {
-      console.log(err)
+  if(!_user.name || !_user.email||_user.password!==_user.repeatPass){
+    if(!_user.name){
+      err = {
+        name:true
+      }
+    }else if(!_user.email){
+      err = {
+        name:false,
+        email:true
+      }
+    }else{
+      err = {
+        name:false,
+        email:false,
+        pass:true
+      }
     }
+    res.render('signup', {
+      title: '注册页面',
+      err:err
+    })
+  }else{
+    User.findOne({name: _user.name},  function(err, user) {
+      if (err) {
+        console.log(err)
+      }
 
-    if (user) {
-      return res.redirect('/signin')
-    }
-    else {
-      user = new User(_user)
-      user.save(function(err, user) {
-        if (err) {
-          console.log(err)
-        }
-        req.session.user = user
-        res.redirect('/user/'+user._id)
-      })
-    }
-  })
+      if (user) {
+        return res.redirect('/signin')
+      }
+      else {
+        user = new User(_user)
+        user.save(function(err, user) {
+          if (err) {
+            console.log(err)
+          }
+          req.session.user = user
+          res.redirect('/user/'+user._id)
+        })
+      }
+    })
+  }
 }
 
 // signin

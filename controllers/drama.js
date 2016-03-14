@@ -120,34 +120,56 @@ exports.savePoster = function(req, res, next) {
 //处理剧集
 exports.dealEpisodes = function (req, res, next){
   var drama = req.body.drama;
-
-  var episodeNames = [],
-      episodeFlashs = [],
-      episode = {};
-  var episodeNumber,length;
-
-  drama.episodes = [];
-  //将剧集名和剧集地址推入drama.episodes保存
-  if(drama.episodeName){
-    episodeNames = drama.episodeName.split('|');
-  }
-  if(drama.episodesFlash){
-    episodeFlashs = drama.episodesFlash.split('|');
-  }
-  if(episodeNames.length>0&&episodeFlashs.length>0){
-    //选择较少项保证剧集信息完整性
-    length = (episodeNames.length>episodeFlashs.length)?episodeFlashs.length:episodeNames.length;
-    for(episodeNumber=0;episodeNumber<length;episodeNumber++){
-      episode = {
-        number:episodeNumber+1,
-        flash:episodeFlashs[episodeNumber],
-        name:episodeNames[episodeNumber]
-      };
-      drama.episodes.push(episode);
-
+  var isEmpty = false;
+  for( var i in drama){
+    if(!drama[i]){
+      Category.find({}, function(err, categories) {
+        res.render('./admin/addDrama', {
+            title: 'DRAMA录入页',
+            categories: categories,
+            drama: {
+              name:'',
+              year:'2016'
+            },
+            episodes:{},
+            err:{
+              info:'请填写完整的信息！'
+            }
+          })
+      })
+      isEmpty = true;
+      break;
     }
   }
-  next();
+  if(!isEmpty){
+    var episodeNames = [],
+        episodeFlashs = [],
+        episode = {};
+    var episodeNumber,length;
+
+    drama.episodes = [];
+    //将剧集名和剧集地址推入drama.episodes保存
+    if(drama.episodeName){
+      episodeNames = drama.episodeName.split('|');
+    }
+    if(drama.episodesFlash){
+      episodeFlashs = drama.episodesFlash.split('|');
+    }
+    if(episodeNames.length>0&&episodeFlashs.length>0){
+      //选择较少项保证剧集信息完整性
+      length = (episodeNames.length>episodeFlashs.length)?episodeFlashs.length:episodeNames.length;
+      for(episodeNumber=0;episodeNumber<length;episodeNumber++){
+        episode = {
+          number:episodeNumber+1,
+          flash:episodeFlashs[episodeNumber],
+          name:episodeNames[episodeNumber]
+        };
+        drama.episodes.push(episode);
+
+      }
+    }
+    next();
+  }
 }
 
 // admin post drama

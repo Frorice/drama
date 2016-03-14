@@ -13,9 +13,20 @@ exports.new = function(req, res) {
   })
 }
 
-// admin post drama
+// admin post category
 exports.save = function(req, res) {
   var _category = req.body.category
+  if(_category.name === ''){
+    res.render('./admin/addCategory', {
+      title: '分类录入页',
+      category: {
+        name:''
+      },
+      err:{
+        info:'分类名不能为空！'
+      }
+    })
+  }else{
   var category = new Category(_category)
 
   category.save(function(err, category) {
@@ -25,6 +36,7 @@ exports.save = function(req, res) {
 
     res.redirect('/admin/clist')
   })
+}
 }
 
 // catelist page
