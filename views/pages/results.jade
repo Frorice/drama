@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  .f-content
+    .category.pure-g
+      .panel.pure-u-1
+        .panel-heading
+          h3 #{keyword}
+        .panel-body.pure-u-1
+          if dramas && dramas.length > 0
+            each drama in dramas
+              .thumbnail.pure-u-3-16
+                    a(href="/drama/#{drama._id}")
+                      img(class="pure-img",src="#{drama.poster}", alt="#{drama.name}")
+                    .caption
+                      span #{drama.name}
+      ul.pagination
+        - for (var i = 0; i < totalPage; i++) {
+          - if (currentPage == (i + 1)) {
+              li.active
+                span #{currentPage}
+          - }
+          - else {
+              li
+                a(href='/results?#{query}&p=#{i}') #{i + 1}
+          - }
+        - }

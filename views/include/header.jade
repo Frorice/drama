@@ -4,8 +4,8 @@
       a(href="/")
         img.pure-img(src="/image/drama.png")
     .search.pure-u-2-3
-      form.pure-form(method="post" action="")
-        input.pure-u-7-12.small(type="text" placeholder="搜索")
+      form.pure-form(method="get" action="/results")
+        input.pure-u-7-12.small(type="text" placeholder="输入电视剧名" name="q")
         input.pure-button.pure-button-primary.pure.small(type="submit",value="搜索")
     .entrance.pure-u-1-6#passages
       .signin
