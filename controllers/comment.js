@@ -26,7 +26,7 @@ exports.save = function(req, res) {
       })
     })
   }
-  else {
+  else if(_comment.content){
     var comment = new Comment(_comment)
 
     comment.save(function(err, comment) {
@@ -36,5 +36,7 @@ exports.save = function(req, res) {
 
       res.redirect('/drama/' + dramaId)
     })
+  }else{
+    res.redirect('/drama/' + dramaId)
   }
 }

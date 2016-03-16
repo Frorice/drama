@@ -17,3 +17,38 @@ block content
           each episode in drama.episodes
             .episode.pure-u-1-12
               a.noline.pure-u-1(href="./#{drama._id}/#{episode.number}" title="#{episode.name}") #{episode.number}
+      .panel-heading.pure-u-13-14
+          h3 评论区
+          .panel-body.pure-u-13-14
+            ul.media-list(style="list-style: none;padding-left:0")
+              each item in comments
+                li.media(style="padding:1rem 0;border-bottom:1px dashed gray")
+                  .pure-u-1-12
+                    a.comment(href="#comments", data-cid="#{item._id}", data-tid="#{item.from._id}")
+                      img.media-object(src="#{item.from.data.avt}", style="width: 64px; height: 64px;border-radius:50%")
+                  .pure-u-11-12
+                    a.media-heading(href="../user/#{item.from._id}") #{item.from.name}
+                    p #{item.content}
+                    if item.reply && item.reply.length > 0
+                      each reply in item.reply
+                        .media
+                          .pull-left
+                            a.comment(href="#comments", data-cid="#{item._id}", data-tid="#{reply.from._id}")
+                              img.media-object(src="#{reply.from.data.avt}", style="width: 64px; height: 64px;")
+                          .media-body
+                            a.media-heading(href="../user/#{item.from._id}")
+                              | #{reply.from.name}
+                              span.text-info &nbsp;回复&nbsp;
+                              | #{reply.to.name}:
+                            p #{reply.content}
+      #comments.pure-u-13-14
+              form.pure-form(method="POST", action="/user/comment")
+                input(type="hidden", name="comment[drama]", value="#{drama._id}")
+                if user
+                  input(type="hidden", name="comment[from]", value="#{user._id}")
+                .form-group
+                  textarea.pure-u-1.form-control(name="comment[content]", row="3" style="max-width:62rem;max-height:10rem")
+                if user
+                  button.pure-button.pure-button-primary.small(type='submit' style="margin-top:1rem") 提交
+                else
+                  span 请登录后评论

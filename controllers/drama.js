@@ -15,8 +15,8 @@ exports.detail = function(req, res) {
   Drama.findById(id, function(err, drama) {
     Comment
       .find({drama: id})
-      .populate('from', 'name')
-      .populate('reply.from reply.to', 'name')
+      .populate('from', '_id name data')
+      .populate('reply.from reply.to', '_id name data')
       .exec(function(err, comments) {
         res.render('./drama/detail', {
           title: drama.name,
