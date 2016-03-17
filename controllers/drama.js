@@ -272,10 +272,12 @@ exports.del = function(req, res) {
     Drama.remove({_id: id}, function(err, drama) {
       if (err) {
         console.log(err)
-        res.json({success: 0})
+        res.write('fail')
+        res.end()
       }
       else {
-        res.json({success: 1})
+        res.write('success')
+        res.end()
       }
     })
   }
